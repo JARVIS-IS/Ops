@@ -1,0 +1,11 @@
+- name: Manage users
+  import_tasks:
+    file: manage-users.yml
+  tags:
+    - users
+
+- name: Install comfort
+  import_tasks:
+    file: comfort.yml
+  tags:
+    - comfort

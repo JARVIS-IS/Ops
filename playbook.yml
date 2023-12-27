@@ -1,0 +1,7 @@
+- name: Setup Server
+  hosts: all
+  gather_facts: no
+  roles:
+      - name: ../roles/setup
+  tags:
+      - setup

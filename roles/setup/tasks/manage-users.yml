@@ -1,0 +1,32 @@
+- include_vars: pi-setup-vars.yml
+
+- name: Make sure we have a 'admin' group
+  ansible.builtin.group:
+    name: admin
+    state: present
+  become: true
+
+- name: Create Users
+  ansible.builtin.user:
+    name: "{{ item.user }}"
+    groups: admin
+    shell: /bin/bash
+  with_items: "{{ users }}"
+  become: true
+
+- name: Allows sudo with no password
+  community.general.sudoers:
+    name: "allows-sudo-with-no-password"
+    user: "{{ item.user }}"
+    commands: ALL
+    nopassword: true
+  with_items: "{{ users }}"
+  become: true
+
+- name: Set authorized keys
+  ansible.posix.authorized_key:
+    user: "{{ item.user }}"
+    state: present
+    key: "https://github.com/{{ item.github }}.keys"
+  with_items: "{{ users }}"
+  become: true
