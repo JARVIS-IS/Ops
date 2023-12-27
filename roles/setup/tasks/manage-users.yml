@@ -8,25 +8,25 @@
 
 - name: Create Users
   ansible.builtin.user:
-    name: "{{ item.user }}"
+    name: "{{ item.username }}"
     groups: admin
     shell: /bin/bash
-  with_items: "{{ users }}"
+  loop: "{{ users }}"
   become: true
 
 - name: Allows sudo with no password
   community.general.sudoers:
     name: "allows-sudo-with-no-password"
-    user: "{{ item.user }}"
+    user: "{{ item.username }}"
     commands: ALL
     nopassword: true
-  with_items: "{{ users }}"
+  loop: "{{ users }}"
   become: true
 
 - name: Set authorized keys
   ansible.posix.authorized_key:
-    user: "{{ item.user }}"
+    user: "{{ item.username }}"
     state: present
     key: "https://github.com/{{ item.github }}.keys"
-  with_items: "{{ users }}"
+  loop: "{{ users }}"
   become: true

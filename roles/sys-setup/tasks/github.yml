@@ -2,9 +2,8 @@
 
 - name: Clone Git repositories
   git:
-    repo: "{{ item }}"
-    dest: "/JARVIS-IS/{{ item | basename }}"
-    version: master
+    repo: "{{ item.url }}"
+    dest: "/srv/JARVIS-IS/{{ item.name }}"
   with_items: "{{ services }}"
 
   become: true
