@@ -5,3 +5,12 @@
       - name: ../roles/setup
   tags:
       - setup
+
+- name: Install Docker
+  hosts: all
+  gather_facts: no
+  roles:
+      - name: ../roles/docker
+  tags:
+      - sys
+      - docker
