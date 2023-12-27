@@ -1,4 +1,4 @@
-- include_vars: pi-setup-vars.yml
+- include_vars: setup-vars.yml
 
 - name: Make sure we have a 'admin' group
   ansible.builtin.group:
