@@ -1,0 +1,5 @@
+services:
+  - https://github.com/JARVIS-IS/SYS-Docker.git
+  - https://github.com/JARVIS-IS/SYS-ManageData.git
+  - https://github.com/JARVIS-IS/SYS-TokenGenerator.git
+  - https://github.com/JARVIS-IS/SYS-SendMail.git

@@ -1,0 +1,10 @@
+- include_vars: sys-vars.yml
+
+- name: Clone Git repositories
+  git:
+    repo: "{{ item }}"
+    dest: "/JARVIS-IS/{{ item | basename }}"
+    version: master
+  with_items: "{{ services }}"
+
+  become: true

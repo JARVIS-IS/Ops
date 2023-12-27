@@ -1,0 +1,5 @@
+- name: Clone Git repositories
+  import_tasks:
+    file: github.yml
+  tags:
+    - github

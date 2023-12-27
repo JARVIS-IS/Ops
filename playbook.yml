@@ -14,3 +14,11 @@
   tags:
       - sys
       - docker
+
+- name: Setup SYS
+  hosts: all
+  gather_facts: no
+  roles:
+      - name: ../roles/sys-setup
+  tags:
+      - sys
