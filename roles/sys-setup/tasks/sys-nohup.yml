@@ -1,0 +1,17 @@
+- include_vars: sys-vars.yml
+
+- name: Install package
+  shell:
+    cmd: "cd /srv/JARVIS-IS/{{ item.name }} && npm i"
+  loop: "{{ nohup }}"
+
+- name: stop nohup
+  shell:
+    cmd: "pkill -f 'node /srv/JARVIS-IS/{{ item.name }}/index.js'"
+  ignore_errors: true
+  loop: "{{ nohup }}"
+
+- name: Launch nohup
+  shell:
+    cmd: "nohup node /srv/JARVIS-IS/{{ item.name }}/index.js > output.log 2>&1 &"
+  loop: "{{ nohup }}"

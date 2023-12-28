@@ -1,0 +1,14 @@
+- include_vars: sys-vars.yml
+
+- name: Stop and remove container (if already exists)
+  docker_container:
+    name: "{{ item.name }}"
+    state: absent
+  loop: "{{ dockers }}"
+
+- name: Run docker-compose
+  community.docker.docker_compose:
+    project_src: "/srv/JARVIS-IS/{{ item.name }}"
+    files:
+      - docker-compose.yml
+  loop: "{{ dockers }}"

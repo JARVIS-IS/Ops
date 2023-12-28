@@ -12,5 +12,7 @@
       - tree
       - vim
       - wget
+      - nodejs
+      - npm
     cache_valid_time: 43200
   become: true

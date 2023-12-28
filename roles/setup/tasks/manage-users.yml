@@ -16,11 +16,11 @@
 
 - name: Allows sudo with no password
   community.general.sudoers:
-    name: "allows-sudo-with-no-password"
+    name: "allows-{{ item.username }}-sudo-with-no-password"
     user: "{{ item.username }}"
     commands: ALL
     nopassword: true
-  loop: "{{ users }}"
+  with_items: "{{ users }}"
   become: true
 
 - name: Set authorized keys

@@ -1,0 +1,17 @@
+- include_vars: sys-vars.yml
+
+- name: Clone Git docker repositories
+  git:
+    repo: "{{ item.url }}"
+    dest: "/srv/JARVIS-IS/{{ item.name }}"
+  with_items: "{{ dockers }}"
+
+  become: true
+
+- name: Clone Git screen repositories
+  git:
+    repo: "{{ item.url }}"
+    dest: "/srv/JARVIS-IS/{{ item.name }}"
+  with_items: "{{ screen }}"
+
+  become: true

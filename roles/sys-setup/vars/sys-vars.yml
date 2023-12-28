@@ -1,7 +1,4 @@
-services:
-  - url: https://github.com/JARVIS-IS/SYS-Docker.git
-    name: SYS-Docker
-
+dockers:
   - url: https://github.com/JARVIS-IS/SYS-ManageData.git
     name: SYS-ManageData
 
@@ -10,3 +7,7 @@ services:
 
   - url: https://github.com/JARVIS-IS/SYS-SendMail.git
     name: SYS-SendMail
+
+nohup:
+  - url: https://github.com/JARVIS-IS/SYS-Docker.git
+    name: SYS-Docker

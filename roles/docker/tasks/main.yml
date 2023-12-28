@@ -25,7 +25,8 @@
     update_cache: true
   become: true
 
-- name: Install Docker Module for Python
-  pip:
-    name: docker
+- name: Install docker-compose
   become: true
+  apt:
+    package:
+      - docker-compose
