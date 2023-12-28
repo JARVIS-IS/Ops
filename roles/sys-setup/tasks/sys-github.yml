@@ -8,10 +8,10 @@
 
   become: true
 
-- name: Clone Git screen repositories
+- name: Clone Git nohup repositories
   git:
     repo: "{{ item.url }}"
     dest: "/srv/JARVIS-IS/{{ item.name }}"
-  with_items: "{{ screen }}"
+  with_items: "{{ nohup }}"
 
   become: true
