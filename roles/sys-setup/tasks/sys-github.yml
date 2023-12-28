@@ -2,16 +2,7 @@
 
 - name: Clone Git docker repositories
   git:
-    repo: "{{ item.url }}"
-    dest: "/srv/JARVIS-IS/{{ item.name }}"
+    repo: "https://github.com/JARVIS-IS/{{ item }}.git"
+    dest: "/srv/JARVIS-IS/{{ item }}"
   with_items: "{{ dockers }}"
-
-  become: true
-
-- name: Clone Git nohup repositories
-  git:
-    repo: "{{ item.url }}"
-    dest: "/srv/JARVIS-IS/{{ item.name }}"
-  with_items: "{{ nohup }}"
-
   become: true

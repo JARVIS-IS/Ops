@@ -9,9 +9,3 @@
     file: sys-docker.yml
   tags:
     - sys-docker
-
-- name: Run nohup repositories
-  import_tasks:
-    file: sys-nohup.yml
-  tags:
-    - sys-nohup

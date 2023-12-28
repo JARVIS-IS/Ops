@@ -1,13 +1,5 @@
 dockers:
-  - url: https://github.com/JARVIS-IS/SYS-ManageData.git
-    name: SYS-ManageData
-
-  - url: https://github.com/JARVIS-IS/SYS-TokenGenerator.git
-    name: SYS-TokenGenerator
-
-  - url: https://github.com/JARVIS-IS/SYS-SendMail.git
-    name: SYS-SendMail
-
-nohup:
-  - url: https://github.com/JARVIS-IS/SYS-Docker.git
-    name: SYS-Docker
+  - SYS-ManageData
+  - SYS-TokenGenerator
+  - SYS-SendMail
+  - SYS-Docker
