@@ -3,3 +3,5 @@ dockers:
   - SYS-TokenGenerator
   - SYS-SendMail
   - SYS-Docker
+  - INT-Terminal
+  - Main
