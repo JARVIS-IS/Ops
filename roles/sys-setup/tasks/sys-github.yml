@@ -1,8 +1,9 @@
 - include_vars: sys-vars.yml
 
-- name: Clone Git docker repositories
+- name: Clone Git repositories
   git:
-    repo: "https://github.com/JARVIS-IS/{{ item }}.git"
+    repo: "git@github.com:JARVIS-IS/{{ item }}.git"
     dest: "/srv/JARVIS-IS/{{ item }}"
+    force: true
   with_items: "{{ dockers }}"
   become: true
