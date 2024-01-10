@@ -15,6 +15,14 @@
       - sys
       - docker
 
+- name: Monitoring
+  hosts: all
+  gather_facts: no
+  roles:
+      - name: ../roles/monitoring
+  tags:
+      - monitoring
+
 - name: Setup SYS
   hosts: all
   gather_facts: no

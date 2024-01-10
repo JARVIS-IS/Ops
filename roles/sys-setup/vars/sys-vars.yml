@@ -1,6 +1,6 @@
 dockers:
   - SYS-ManageData
-  - SYS-TokenGenerator
+  - SYS-Token
   - SYS-SendMail
   - SYS-Docker
   - INT-Terminal
