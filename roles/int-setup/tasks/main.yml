@@ -1,0 +1,11 @@
+- name: Clone Git repositories
+  import_tasks:
+    file: sys-github.yml
+  tags:
+    - sys-github
+
+- name: Run Dockers repositories
+  import_tasks:
+    file: sys-docker.yml
+  tags:
+    - sys-docker
